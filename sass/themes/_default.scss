@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+html * {
+    font-family: var.$font-family;
+}
+ 
+body {
+    overflow-x: hidden;
+    font-size: 18px;
+    background-color: var.$bg-white;
+} 
+

@@ -1,0 +1,95 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__content {
+        width: 1400px;
+        margin-top: 80px;
+    }
+
+    &__title {
+        max-width: 800px;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 80px;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 40px;
+        max-width: 750px;
+        margin-top: 32px;
+    }
+
+    &__buttons {
+        margin-top: 56px;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+
+        .button {
+            @include mix.button();
+            font-size: 18px;
+            padding: 10px 35px;
+        }
+
+        .play-button {
+            align-items: flex;
+            display: flex;
+            text-decoration: none;
+            color: var.$color-blue;
+            font-weight: 700;
+            &:hover{
+               color: rgba(34,193,195,1);
+               transition: all 0.5s ease;
+            }
+
+            img {
+                width: 28px;
+                border-radius: 50%;
+                background-color: white;
+                border-color: black;
+                padding: 6px;
+            }
+
+        }
+    }
+
+    &__img {
+        border-radius: 10px;
+        position: absolute;
+        top: 125px;
+        right: -15px;
+        width: 800px;
+
+        img.img-principal {
+            width: 620px;
+        }
+
+        img.img-bg {
+            position:absolute;
+            width: 350px;
+            top: -45px;
+            right: 127px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -125px;
+        right: -50px;
+        width: 500px;
+        height: 760px;
+        background-color: var.$color-aqua;
+        z-index: -2;
+    }
+
+}

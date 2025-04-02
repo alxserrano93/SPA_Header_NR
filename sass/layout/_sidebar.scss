@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+
+.header__login{
+    ul{
+        @include mix.reset-list();
+        gap: 50px;
+        font-size: 15px;
+    }
+
+    .cart, .search{
+        width: 32px;
+    }
+
+    .sign-in{
+        color: var.$color-blue;
+        font-weight: 400;
+        &:hover{
+            color: white;
+            transition: all 0.5s ease;
+        }
+    }
+}
